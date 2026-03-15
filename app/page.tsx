@@ -191,7 +191,7 @@ export default function HomePage() {
               </p>
 
               <p className="mt-6 text-[#E2C48A]">
-                on Monday the 29th of May 2026
+                on Friday the 29th of May 2026
               </p>
 
               <div className="mt-5 space-y-1">

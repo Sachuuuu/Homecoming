@@ -230,7 +230,7 @@ export default function HomePage() {
 
             {/* RSVP Heading */}
             <div className="mt-14 text-center">
-              <h3 className="text-2xl font-serif text-[#E2C48A]">RSVP (Regrets only)</h3>
+              <h3 className="text-2xl font-serif text-[#E2C48A]">RSVP</h3>
               <p className="mt-2 text-[#D9C6C8]">
                 Please confirm your attendance below
               </p>
@@ -245,7 +245,7 @@ export default function HomePage() {
 
             {/* Contact Numbers */}
             <div className="mt-10 text-center text-sm text-muted">
-              <p className="font-semibold text-[#D9C6C8]">For regrets please contact</p>
+              <p className="font-semibold text-[#D9C6C8]">Contact details</p>
 
               <p className="mt-2">
                 Thushara – <a href="tel:+94718007123" className="text-gold">071 8007123</a>

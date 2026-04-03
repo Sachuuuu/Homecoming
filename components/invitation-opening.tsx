@@ -7,10 +7,12 @@ import BrushReveal from "@/components/brush-reveal";
 
 type InvitationOpeningProps = {
   onComplete: () => void;
+  onEnvelopeReady: () => void; // <-- 1. Add this new prop
 };
 
 export function InvitationOpening({
-  onComplete
+  onComplete,
+  onEnvelopeReady // <-- 2. Destructure it
 }: InvitationOpeningProps) {
   const [stage, setStage] = useState<"intro" | "envelope" | "opening">("intro");
 
@@ -20,7 +22,7 @@ export function InvitationOpening({
     }, 7000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [onEnvelopeReady]);
 
   useEffect(() => {
     if (stage === "opening") {
@@ -63,7 +65,7 @@ export function InvitationOpening({
               transition={{ duration: 1, delay: 2.45 }}
               className="font-serif text-5xl leading-tight text-[#F8F4ED] drop-shadow-[0_4px_18px_rgba(0,0,0,0.6)] sm:text-6xl lg:text-7xl"
             >
-              Mahinsa <span className="text-[#D4AF37]">♥</span> Buddhimanthi
+              Buddhimanthi <span className="text-[#D4AF37]">♥</span> Mahinsa
             </motion.h1>
 
             <motion.p
@@ -81,6 +83,7 @@ export function InvitationOpening({
 
     {stage === "envelope" && (
       <EnvelopeOpening
+      onMounted={onEnvelopeReady}
         onOpen={() => {
           setStage("opening");
         }}

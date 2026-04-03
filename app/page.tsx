@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Image from "next/image";
 import { Heart, Sparkles } from "lucide-react";
 import { AudioPlayer } from "@/components/audio-player";
@@ -17,20 +17,24 @@ import { eventCards } from "@/lib/constants";
 
 export default function HomePage() {
   const [opened, setOpened] = useState(false);
-
+  const [envelopeReady, setEnvelopeReady] = useState(false);
+  const handleEnvelopeReady = useCallback(() => {
+    setEnvelopeReady(true);
+  }, []);
   return (
     <>
       {!opened && (
-        <InvitationOpening
-          onComplete={() => {
-            setOpened(true);
-          }}
+        <InvitationOpening 
+          onComplete={() => setOpened(true)} 
+          onEnvelopeReady={handleEnvelopeReady} // <-- 3. Pass the function down
         />
       )}
 
       <main
-        className={`relative min-h-screen transition-all duration-[800ms] ${
-          opened ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`relative bg-ivory text-ink ${
+            !envelopeReady && !opened ? "opacity-0" : "opacity-100"
+        } ${
+            !opened ? "pointer-events-none" : ""
         }`}
         aria-hidden={!opened}
       >

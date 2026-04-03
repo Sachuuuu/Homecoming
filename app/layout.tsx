@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Mahinsa & Buddhimanthi Homecoming",
+  title: "Buddhimanthi & Mahinsa Wedding",
   description:
     "A romantic and elegant homecoming invitation website for Buddhimanthi Bulathsinghala and Mahinsa Ranasinghe."
 };
@@ -14,6 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Preloads the wax seal image so it renders instantly without delay */}
+        <link rel="preload" href="/envelope/seal.png" as="image" />
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -399,6 +399,7 @@ export default function EnvelopeOpening({
             fill 
             className="object-contain" 
             priority 
+            unoptimized
           />
             
           {/* The M&B Initials perfectly centered over the image */}

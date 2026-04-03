@@ -29,7 +29,7 @@ export default function HomePage() {
       )}
 
       <main
-        className={`relative min-h-screen transition-all duration-[1400ms] ${
+        className={`relative min-h-screen transition-all duration-[800ms] ${
           opened ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         aria-hidden={!opened}

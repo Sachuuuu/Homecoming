@@ -31,7 +31,7 @@ export default function HomePage() {
       )}
 
       <main
-        className={`relative bg-ivory text-ink ${
+        className={`relative min-h-screen ${
             !envelopeReady && !opened ? "opacity-0" : "opacity-100"
         } ${
             !opened ? "pointer-events-none" : ""

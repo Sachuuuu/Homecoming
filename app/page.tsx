@@ -164,7 +164,7 @@ export default function HomePage() {
 
             <Reveal>
               <SectionHeading
-                eyebrow="Wedding Invitation"
+                eyebrow="Homecoming Invitation"
                 title="We request the honor of your presence"
               />
             </Reveal>

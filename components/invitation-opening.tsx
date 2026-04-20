@@ -19,7 +19,7 @@ export function InvitationOpening({
   useEffect(() => {
     const timer = setTimeout(() => {
       setStage("envelope");
-    }, 7000);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, [onEnvelopeReady]);

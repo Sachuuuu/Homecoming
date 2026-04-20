@@ -297,6 +297,30 @@ export function RSVPForm() {
           </>
         )}
       </button>
+      <AnimatePresence mode="wait">
+        {feedback.type ? (
+          <motion.div
+            key={feedback.type}
+            initial={{ opacity: 0, y: 8, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.98 }}
+            className={`rounded-2xl p-4 text-sm ${
+              feedback.type === "success"
+                ? "border border-emerald-200 bg-emerald-50 text-emerald-700"
+                : "border border-rose-200 bg-rose-50 text-rose-700"
+            }`}
+          >
+            <div className="flex items-start gap-3">
+              {feedback.type === "success" ? (
+                <CheckCircle2 className="mt-0.5" size={18} />
+              ) : (
+                <TriangleAlert className="mt-0.5" size={18} />
+              )}
+              <span>{feedback.message}</span>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </form>
   );
 }

@@ -170,7 +170,7 @@ export default function HomePage() {
             </Reveal>
 
             {/* Invitation Card */}
-            <div className="mx-auto max-w-xl rounded-3xl border border-[#C6A15B]/40 bg-[rgba(246,239,234,0.08)] p-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-md sm:p-10">
+            <div className="mx-auto mt-10 max-w-xl rounded-3xl border border-[#C6A15B]/40 bg-[rgba(246,239,234,0.08)] p-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-md sm:p-10">
 
               <p className="text-[#F1E3E5]">
                 Mr. & Mrs. Athula Ranasinghe

@@ -24,18 +24,16 @@ export default function HomePage() {
   return (
     <>
       {!opened && (
-        <InvitationOpening 
-          onComplete={() => setOpened(true)} 
+        <InvitationOpening
+          onComplete={() => setOpened(true)}
           onEnvelopeReady={handleEnvelopeReady} // <-- 3. Pass the function down
         />
       )}
 
       <main
-        className={`relative min-h-screen ${
-            !envelopeReady && !opened ? "opacity-0" : "opacity-100"
-        } ${
-            !opened ? "pointer-events-none" : ""
-        }`}
+        className={`relative min-h-screen ${!envelopeReady && !opened ? "opacity-0" : "opacity-100"
+          } ${!opened ? "pointer-events-none" : ""
+          }`}
         aria-hidden={!opened}
       >
         <Navbar />
@@ -125,7 +123,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="details" className="section-space relative">
+        {/* <section id="details" className="section-space relative">
           <div className="container-shell">
             <Reveal>
               <SectionHeading
@@ -152,8 +150,47 @@ export default function HomePage() {
               })}
             </div>
           </div>
-        </section>
+        </section> */}
+        <section id="details" className="section-space relative">
+          <div className="container-shell">
+            <Reveal>
+              <SectionHeading
+                eyebrow="Event Details"
+                title="Join us for a memorable evening"
+                description="An elegant celebration of togetherness, tradition, and joy."
+              />
+            </Reveal>
 
+            {/* 1. Changed from grid to flex-wrap with justify-center and controlled gaps */}
+            <div className="mt-12 flex flex-wrap justify-center gap-6 sm:gap-8">
+              {eventCards.map((card, index) => {
+                const Icon = card.icon;
+
+                // 2. Layout wrapper controls width & forces equal height
+                return (
+                  <div
+                    key={card.title}
+                    className="flex w-full flex-shrink-0 sm:w-[calc(50%-1.5rem)] md:w-64"
+                  >
+                    {/* 3. Reveal fills wrapper */}
+                    <Reveal delay={index * 0.06} className="h-full w-full">
+                      <div className="card-luxury group h-full flex flex-col rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+
+                        <div className="mb-5 inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-champagne text-gold transition group-hover:scale-105">
+                          <Icon size={22} />
+                        </div>
+
+                        <h3 className="text-2xl flex-shrink-0">{card.title}</h3>
+                        <p className="mt-3 text-sm flex-grow">{card.description}</p>
+
+                      </div>
+                    </Reveal>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
         <Gallery />
 
         <section id="rsvp" className="section-space relative overflow-hidden">
@@ -204,7 +241,7 @@ export default function HomePage() {
                 </p>
 
                 <p className="font-medium text-[#F6EFEA]">
-                   Empire Ballroom
+                  Empire Ballroom
                 </p>
 
                 <p className="text-[#F6EFEA]">

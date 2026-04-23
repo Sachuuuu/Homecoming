@@ -47,11 +47,11 @@ export const eventCards = [
     description: "Join us as we celebrate the beginning of our new journey together.",
     icon: CalendarHeart
   },
-  {
-    title: "Dinner & Celebration",
-    description: "An evening filled with music, laughter, and joyful moments with family and friends.",
-    icon: GlassWater
-  },
+  // {
+  //   title: "Dinner & Celebration",
+  //   description: "An evening filled with music, laughter, and joyful moments with family and friends.",
+  //   icon: GlassWater
+  // },
   {
     title: "Venue",
     description: "Empire Ballroom, Mount Lavinia Hotel, Mount Lavinia",

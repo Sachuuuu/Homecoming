@@ -19,7 +19,7 @@ export function InvitationOpening({
   useEffect(() => {
     const timer = setTimeout(() => {
       setStage("envelope");
-    }, 7000);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, [onEnvelopeReady]);
@@ -37,7 +37,7 @@ export function InvitationOpening({
  return (
   <AnimatePresence mode="wait">
 
-    {stage === "intro" && (
+    {/* {stage === "intro" && (
       <motion.div
         key="intro"
         initial={{ opacity: 1 }}
@@ -56,7 +56,7 @@ export function InvitationOpening({
               transition={{ duration: 0.9, delay: 2.2 }}
               className="mb-4 text-xs uppercase tracking-[0.45em] text-white/80"
             >
-              Wedding Invitation
+              Homecoming Invitation
             </motion.p>
 
             <motion.h1
@@ -65,7 +65,7 @@ export function InvitationOpening({
               transition={{ duration: 1, delay: 2.45 }}
               className="font-serif text-5xl leading-tight text-[#F8F4ED] drop-shadow-[0_4px_18px_rgba(0,0,0,0.6)] sm:text-6xl lg:text-7xl"
             >
-              Buddhimanthi <span className="text-[#D4AF37]">♥</span> Mahinsa
+              Mahinsa <span className="text-[#D4AF37]">♥</span> Buddhimanthi
             </motion.h1>
 
             <motion.p
@@ -79,7 +79,7 @@ export function InvitationOpening({
           </div>
         </div>
       </motion.div>
-    )}
+    )} */}
 
     {stage === "envelope" && (
       <EnvelopeOpening

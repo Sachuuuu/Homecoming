@@ -17,7 +17,16 @@ export function Hero() {
           alt="Couple background"
           fill
           priority
+          sizes="100vw"
           className="object-cover"
+        />
+        <Image
+          src="/images/hero-couple-mobile.jpg"
+          alt="Couple background"
+          fill
+          priority
+          sizes="100vw"
+          className="block md:hidden object-cover object-top"
         />
       </div>
 
